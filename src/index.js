@@ -18,16 +18,13 @@ const onClickAdd = () => {
   completeButton.idName = "add-complete";
   completeButton.innerText = "完了";
   completeButton.addEventListener("click", () => {
-    alert("完了");
+    deleteFromIncompleteList(completeButton.parentNode);
   });
 
   const deleteButton = document.createElement("button");
   deleteButton.innerText = "削除";
   deleteButton.addEventListener("click", () => {
-    const deleteTarget = deleteButton.parentNode;
-    document
-      .getElementById("incomplete-list")
-      .removeChild(deleteTarget.parentNode);
+    deleteFromIncompleteList(deleteButton.parentNode);
   });
 
   div.appendChild(completeButton);
@@ -37,6 +34,10 @@ const onClickAdd = () => {
   li.appendChild(div);
 
   document.getElementById("incomplete-list").appendChild(li);
+};
+
+const deleteFromIncompleteList = (target) => {
+  document.getElementById("incomplete-list").removeChild(target.parentNode);
 };
 
 document
