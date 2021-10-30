@@ -30,7 +30,11 @@ const onClickAdd = () => {
     const incompleteButton = document.createElement("button");
     incompleteButton.innerText = "戻す";
     incompleteButton.addEventListener("click", () => {
-      alert("戻す");
+      const removeButton = incompleteButton.parentNode;
+      document.getElementById('complete-list').removeChild(removeButton);
+ 
+      const text = removeButton.parentNode.firstElementChild.innerText;
+      console.log(text);
     });
 
     addTar.appendChild(p);
