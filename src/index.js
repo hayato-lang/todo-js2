@@ -19,6 +19,24 @@ const onClickAdd = () => {
   completeButton.innerText = "完了";
   completeButton.addEventListener("click", () => {
     deleteFromIncompleteList(completeButton.parentNode);
+    const addTarget = completeButton.parentNode;
+    const addTar = addTarget.parentNode;
+    const text = addTar.firstElementChild.innerText;
+    addTar.textContent = null;
+
+    const p = document.createElement("p");
+    p.className = "todo-title";
+    p.innerText = text;
+    const incompleteButton = document.createElement("button");
+    incompleteButton.innerText = "戻す";
+    incompleteButton.addEventListener("click", () => {
+      alert("戻す");
+    });
+
+    addTar.appendChild(p);
+    addTar.appendChild(incompleteButton);
+
+    document.getElementById("complete-list").appendChild(addTar);
   });
 
   const deleteButton = document.createElement("button");
