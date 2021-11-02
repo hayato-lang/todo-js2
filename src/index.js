@@ -1,3 +1,5 @@
+// TODOリストを作成
+
 import "./styles.css";
 
 const onClickAdd = () => {
@@ -31,8 +33,8 @@ const onClickAdd = () => {
     incompleteButton.innerText = "戻す";
     incompleteButton.addEventListener("click", () => {
       const removeButton = incompleteButton.parentNode;
-      document.getElementById('complete-list').removeChild(removeButton);
- 
+      document.getElementById("complete-list").removeChild(removeButton);
+
       const text = removeButton.parentNode.firstElementChild.innerText;
       console.log(text);
     });
